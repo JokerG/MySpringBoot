@@ -8,29 +8,36 @@
         <groupId>com.joker.springboot</groupId>
         <version>1.0.0</version>
     </parent>
-    <packaging>jar</packaging>
-    <groupId>com.joker.springboot</groupId>
+
     <artifactId>myspringboot-dao</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.joker.springboot</groupId>
             <artifactId>myspringboot-common</artifactId>
         </dependency>
+
+        <!-- Spring Boot Mybatis 依赖 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+
+        <!-- MySQL 连接驱动依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- Druid 数据连接池依赖 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
     </dependencies>
-
-    <build>
-        <!-- 一定要声明如下配置-->
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
-    </build>
-
 </project>

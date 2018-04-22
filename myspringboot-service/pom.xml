@@ -9,12 +9,15 @@
         <version>1.0.0</version>
     </parent>
 
-    <packaging>jar</packaging>
     <artifactId>myspringboot-service</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.joker.springboot</groupId>
             <artifactId>myspringboot-dao</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 </project>

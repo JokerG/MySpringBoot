@@ -15,6 +15,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.joker.springboot</groupId>
+            <artifactId>myspringboot-service</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -49,9 +54,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
+        <!--打包名称-->
         <finalName>myspringboot-web</finalName>
         <plugins>
             <plugin>
@@ -69,6 +76,12 @@
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
+
 
 </project>
