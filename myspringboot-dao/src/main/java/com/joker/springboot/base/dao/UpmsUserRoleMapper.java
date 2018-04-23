@@ -1,9 +1,10 @@
-package com.joker.springboot.base.dao.mapper;
+package com.joker.springboot.base.dao;
 
-import com.joker.springboot.base.dao.entity.UpmsUserRole;
-import com.joker.springboot.base.dao.entity.UpmsUserRoleExample;
-import java.util.List;
+import com.joker.springboot.base.entity.UpmsUserRole;
+import com.joker.springboot.base.entity.UpmsUserRoleExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UpmsUserRoleMapper {
     /**

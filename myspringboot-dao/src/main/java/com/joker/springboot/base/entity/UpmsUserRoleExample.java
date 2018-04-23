@@ -1,4 +1,4 @@
-package com.joker.springboot.base.dao.entity;
+package com.joker.springboot.base.entity;
 
 import java.util.ArrayList;
 import java.util.List;

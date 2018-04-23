@@ -1,4 +1,4 @@
-package com.joker.springboot.web.build;
+package com.joker.springboot.web;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

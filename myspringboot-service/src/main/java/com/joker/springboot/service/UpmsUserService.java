@@ -1,7 +1,7 @@
 package com.joker.springboot.service;
 
 
-import com.joker.springboot.base.dao.entity.UpmsUser;
+import com.joker.springboot.base.entity.UpmsUser;
 
 import java.util.List;
 

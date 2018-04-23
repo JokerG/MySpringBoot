@@ -1,17 +1,15 @@
 package com.joker.springboot.common.utils;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.mozilla.universalchardet.UniversalDetector;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
-import org.mozilla.universalchardet.UniversalDetector;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.util.StringUtils;
-
 public class FileUtil {
-	private static Logger logger = LoggerFactory.getLogger(FileUtil.class);
+//	private static Logger logger = LoggerFactory.getLogger(FileUtil.class);
 
 	/**
 	 * @param srcFilePath
@@ -76,7 +74,7 @@ public class FileUtil {
 					"com.self.common.utils.FileUtil.getCharset failed");
 		}
 		detector.reset();
-		logger.debug("file " + file.getAbsolutePath() + "charset is:" + encode);
+//		logger.debug("file " + file.getAbsolutePath() + "charset is:" + encode);
 		return encode;
 	}
 

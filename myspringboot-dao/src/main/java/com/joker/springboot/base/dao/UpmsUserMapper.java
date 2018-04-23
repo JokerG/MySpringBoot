@@ -1,9 +1,10 @@
-package com.joker.springboot.base.dao.mapper;
+package com.joker.springboot.base.dao;
 
-import com.joker.springboot.base.dao.entity.UpmsUser;
-import com.joker.springboot.base.dao.entity.UpmsUserExample;
-import java.util.List;
+import com.joker.springboot.base.entity.UpmsUser;
+import com.joker.springboot.base.entity.UpmsUserExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UpmsUserMapper {
     /**

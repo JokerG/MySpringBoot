@@ -19,8 +19,8 @@ import javax.sql.DataSource;
 public class ClusterDataSourceConfig {
 
     // 精确到 cluster 目录，以便跟其他数据源隔离
-    static final String PACKAGE = "com.joker.springboot.base.dao";
-    static final String MAPPER_LOCATION = "classpath:mybatis/mapper/base/*.xml";
+    static final String PACKAGE = "com.joker.springboot.biz.dao";
+    static final String MAPPER_LOCATION = "classpath:mybatis/mapper/biz/*.xml";
 
     @Value("${cluster.datasource.url}")
     private String url;

@@ -1,8 +1,8 @@
 package com.joker.springboot.service.impl;
 
-import com.joker.springboot.base.dao.entity.UpmsUser;
-import com.joker.springboot.base.dao.entity.UpmsUserExample;
-import com.joker.springboot.base.dao.mapper.UpmsUserMapper;
+import com.joker.springboot.base.dao.UpmsUserMapper;
+import com.joker.springboot.base.entity.UpmsUser;
+import com.joker.springboot.base.entity.UpmsUserExample;
 import com.joker.springboot.service.UpmsUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.joker.springboot.biz.mapper;
+package com.joker.springboot.biz.dao;
 
-import com.joker.springboot.base.dao.entity.UpmsPermission;
+import com.joker.springboot.base.entity.UpmsPermission;
 
 import java.util.List;
 

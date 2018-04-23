@@ -68,12 +68,15 @@
                     <!-- 如果没有该项配置，实际测试ok -->
                     <!-- <fork>true</fork> -->
                     <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.joker.springboot.web.build.MyspringbootApplication</mainClass>
+                    <mainClass>com.joker.springboot.web.MyspringbootApplication</mainClass>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>

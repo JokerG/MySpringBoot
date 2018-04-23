@@ -1,7 +1,7 @@
 package com.joker.springboot.service.VO;
 
 import com.alibaba.fastjson.JSONArray;
-import com.joker.springboot.base.dao.entity.UpmsPermission;
+import com.joker.springboot.base.entity.UpmsPermission;
 
 import java.io.Serializable;
 

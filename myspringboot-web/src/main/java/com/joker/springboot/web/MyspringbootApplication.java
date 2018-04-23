@@ -1,4 +1,4 @@
-package com.joker.springboot.web.build;
+package com.joker.springboot.web;
 
 import org.apache.catalina.connector.Connector;
 import org.slf4j.Logger;
@@ -16,7 +16,12 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-@SpringBootApplication(scanBasePackages = "com.joker.springboot.web.controller")
+/**
+ * 应用启动类
+ *
+ * @author guoxp
+ */
+@SpringBootApplication(scanBasePackages = "com.joker.springboot")
 public class MyspringbootApplication
 {
     public static void main(String[] args)

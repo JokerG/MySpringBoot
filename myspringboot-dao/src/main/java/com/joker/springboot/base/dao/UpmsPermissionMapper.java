@@ -1,9 +1,10 @@
-package com.joker.springboot.base.dao.mapper;
+package com.joker.springboot.base.dao;
 
-import com.joker.springboot.base.dao.entity.UpmsPermission;
-import com.joker.springboot.base.dao.entity.UpmsPermissionExample;
-import java.util.List;
+import com.joker.springboot.base.entity.UpmsPermission;
+import com.joker.springboot.base.entity.UpmsPermissionExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UpmsPermissionMapper {
     /**

@@ -1,4 +1,4 @@
-package com.joker.springboot.web.build;
+package com.joker.springboot.web;
 
 /**
  * 定义错误页面
