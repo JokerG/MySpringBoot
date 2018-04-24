@@ -29,7 +29,6 @@ public class UpmsPermissionServiceImpl implements UpmsPermissionService {
 		Map<Integer, JSONObject> directoryMap = new LinkedHashMap<Integer, JSONObject>();
 		for (UpmsPermission up : list) {
 			// 目录
-
 			if (PermissionTypeEnum.TYPE_1.getCode().equals(up.getType().toString())) {
 				directoryMap.put(up.getPermissionId(), (JSONObject) JSON.toJSON(up));
 				continue;

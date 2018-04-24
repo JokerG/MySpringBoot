@@ -55,7 +55,7 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>mybatis/**.xml</include>
-                    <include>mybatis/**/**.xml</include><!-- i18n能读取到 -->
+                    <include>mybatis/**/**.xml</include>
                     <include>mybatis/mapper/**/**.xml</include>
                 </includes>
             </resource>

@@ -31,7 +31,7 @@
         left join upms_user_role uur on ur.role_id = uur.user_role_id
         left join upms_user uu on  uur.user_id = uu.user_id
         where uu.login_id=#{loginId} and up.status = '1'
-        <![CDATA[  and type <> '3']]>
+        <![CDATA[  and up.type <> '3']]>
         order by up.permission_id asc,up.orders asc
   </select>
 </mapper>
