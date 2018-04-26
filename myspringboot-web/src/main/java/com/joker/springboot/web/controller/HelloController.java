@@ -1,9 +1,14 @@
 package com.joker.springboot.web.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 等于 @Controller @ResponseBody的混合体，可以这样理解）
@@ -14,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @RestController
 public class HelloController extends BaseController {
+    private static final Logger logger  = LoggerFactory.getLogger(HelloController.class);
     @Value("${com.hello.message}")
     private String message;
 
@@ -28,7 +34,8 @@ public class HelloController extends BaseController {
     }
 
     @RequestMapping("/hello2")
-    public ModelAndView hello2() {
+    public ModelAndView hello2(HttpServletRequest request, @ModelAttribute("author") String author) {
+        logger.info("=====================hello2, author :{}",author);
         throw new RuntimeException();
     }
 

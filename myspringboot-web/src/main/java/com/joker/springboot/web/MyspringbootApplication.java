@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author guoxp
  */
-@SpringBootApplication(scanBasePackages = "com.joker.springboot")
+@SpringBootApplication(scanBasePackages = {"com.joker.springboot"})
 public class MyspringbootApplication
 {
     public static void main(String[] args)

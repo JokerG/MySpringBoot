@@ -6,6 +6,6 @@
     <title>Insert title here</title>
 </head>
 <body>
-500错误
+500错误，${author}
 </body>
 </html>
