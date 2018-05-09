@@ -1,6 +1,5 @@
 package com.joker.springboot.web.config;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -8,7 +7,8 @@ import org.springframework.data.redis.connection.RedisSentinelConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 
 import redis.clients.jedis.JedisPoolConfig;
-@Configurable
+
+//@Configurable
 public class RedisSentinelConfig {
     @Value("${sentinel.redis.host}")
     private  String sentinelhost;

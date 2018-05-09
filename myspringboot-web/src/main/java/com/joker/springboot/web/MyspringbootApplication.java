@@ -1,20 +1,26 @@
 package com.joker.springboot.web;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.catalina.connector.Connector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.ContextClosedEvent;
+import org.springframework.http.converter.HttpMessageConverter;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson.support.config.FastJsonConfig;
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
 /**
  * 应用启动类
@@ -81,5 +87,26 @@ public class MyspringbootApplication
             }
         }
 
+    }
+
+    /**
+     * json转换使用fastjson
+     * 
+     * @return
+     */
+    @Bean
+    public HttpMessageConverters fastJsonHttpMessageConverters()
+    {
+        // 1. 需要定义一个converter转换消息的对象
+        FastJsonHttpMessageConverter fasHttpMessageConverter = new FastJsonHttpMessageConverter();
+
+        // 2. 添加fastjson的配置信息，比如:是否需要格式化返回的json的数据
+        FastJsonConfig fastJsonConfig = new FastJsonConfig();
+        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+
+        // 3. 在converter中添加配置信息
+        fasHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
+        HttpMessageConverter<?> converter = fasHttpMessageConverter;
+        return new HttpMessageConverters(converter);
     }
 }

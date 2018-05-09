@@ -1,10 +1,8 @@
 package com.joker.springboot.web.controller;
 
 
-import com.alibaba.fastjson.JSON;
-import com.joker.springboot.base.entity.UpmsUser;
-import com.joker.springboot.service.UpmsPermissionService;
-import com.joker.springboot.service.UpmsUserService;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,12 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.fastjson.JSON;
+import com.joker.springboot.base.entity.UpmsUser;
+import com.joker.springboot.dubbo.service.UserDubboService;
+import com.joker.springboot.service.UpmsPermissionService;
+import com.joker.springboot.service.UpmsUserService;
 
 /**
  * 用户
@@ -26,6 +29,12 @@ public class UpmsUserController {
     private UpmsPermissionService upmsPermissionService;
     @Autowired
     private RedisTemplate redisTemplate;
+    /**
+     * com.alibaba.dubbo.config.annotation.Reference 注解标识dubbo服务引用，version 定义服务版本号
+     */
+    @Reference(version = "1.0.0", lazy = true)
+    private UserDubboService userDubboService;
+
     @RequestMapping("/userList")
     public List<UpmsUser> queryUserList() {
         return upmsUserService.queryUserList();
@@ -45,4 +54,11 @@ public class UpmsUserController {
         }
        return list;
     }
+
+    @RequestMapping("/dubbo")
+    public List queryUsers()
+    {
+        return userDubboService.queryUserList();
+    }
+
 }

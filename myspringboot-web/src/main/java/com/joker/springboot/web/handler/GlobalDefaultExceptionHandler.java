@@ -1,5 +1,7 @@
 package com.joker.springboot.web.handler;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.Model;
@@ -8,12 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import javax.servlet.http.HttpServletRequest;
-
 /**
- * 全局异常捕捉处理器,Controller 增强器
+ * 全局异常捕捉处理器,Controller 增强器 注解@ControllerAdivce 标识当前类为异常处理类,可配置作用域
+ * 
+ * @author guoxp
  */
-// 注解@ControllerAdivce 标识当前类为异常处理类,可配置作用域
 @ControllerAdvice
 public class GlobalDefaultExceptionHandler
         extends ResponseEntityExceptionHandler
